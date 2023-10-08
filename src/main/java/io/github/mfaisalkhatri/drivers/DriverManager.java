@@ -25,12 +25,22 @@ import org.openqa.selenium.remote.RemoteWebDriver;
  */
 public final class DriverManager {
     private static final ThreadLocal<WebDriver> DRIVER          = new ThreadLocal<> ();
+
+    // lambdatest.com,是一个基于 selenium grid的移动APPS和跨浏览器测试云
     private static final String                 GRID_URL        = "@hub.lambdatest.com/wd/hub";
     private static final String                 HUB_URL         = "http://localhost:4444/wd/hub";
     private static final Logger                 LOG             = LogManager.getLogger ("DriverManager.class");
+
+    // lambdatest.com hub token
     private static final String                 LT_ACCESS_TOKEN = System.getProperty ("LT_ACCESS_KEY");
     private static final String                 LT_USERNAME     = System.getProperty ("LT_USERNAME");
     private static final String NO_SANDBOX = "--no-sandbox";
+
+    /**
+     * 大量渲染时候写入/tmp而非/dev/shm
+     * /dev/shm是一个临时文件存储文件系统，即tmpfs，它使用RAM作为后备存储。
+     * /tmp是文件系统层级标准（Filesystem Hierarchy Standard）中定义的临时文件的位置
+     */
     private static final String DISABLE_DEV_SHM = "--disable-dev-shm-usage";
     private static final String CUSTOM_WINDOW_SIZE = "--window-size=1050,600";
     private static final String HEADLESS = "--headless";
@@ -95,8 +105,13 @@ public final class DriverManager {
 
     private static void setupChromeDriver () {
         LOG.info ("Setting up Chrome Driver....");
+
+        // headless参数在maven 构建时传递
+        // `mvn clean install -Dsuite-xml=test-suite\testng-juice-shop.xml -Dheadless=true`
         final var isHeadless = Boolean.parseBoolean (
             Objects.requireNonNullElse (System.getProperty ("headless"), "true"));
+
+        // chrome 的试验性选项
         final var chromePrefs = new HashMap<String, Object> ();
         chromePrefs.put ("safebrowsing.enabled", "true");
         chromePrefs.put ("download.prompt_for_download", "false");
