@@ -12,6 +12,7 @@ import org.openqa.selenium.devtools.DevTools;
 import org.openqa.selenium.devtools.v113.log.Log;
 
 /**
+ * Chrome browser develop tools
  * Created By Faisal Khatri on 21-03-2022
  */
 @Builder
