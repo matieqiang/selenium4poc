@@ -1,14 +1,17 @@
 package io.github.mfaisalkhatri.pages.amazon;
 
-import static io.github.mfaisalkhatri.drivers.DriverManager.getDriver;
-
+import lombok.Getter;
 import org.openqa.selenium.By;
+
+import static io.github.mfaisalkhatri.drivers.DriverManager.getDriver;
 
 /**
  * @author Faisal Khatri
  * @since 2/21/2023
  **/
+@Getter
 public class HomePage {
+
 
     public String getProductDesc () {
         return getDriver ().findElement (By.cssSelector ("[data-component-id='2'] h2"))
