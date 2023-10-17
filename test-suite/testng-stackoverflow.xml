@@ -5,7 +5,8 @@
         <parameter name="browser" value="chrome"/>
         <parameter name="headless" value="false"/>
         <classes>
-            <class name="io.github.mfaisalkhatri.tests.stackoverflow.LoginTest"/>
+            <class name="io.github.mfaisalkhatri.tests.stackoverflow.ReadMessageTestCase"/>
+<!--            <class name="io.github.mfaisalkhatri.tests.stackoverflow.LoginTest"/>-->
 <!--            <class name="io.github.mfaisalkhatri.tests.stackoverflow.Examples"/>-->
         </classes>
     </test> <!-- Test -->

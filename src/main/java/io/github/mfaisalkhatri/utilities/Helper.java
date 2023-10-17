@@ -12,8 +12,12 @@ public final class Helper {
         element.sendKeys (text);
     }
 
-    public static void pause (final long timeInMillis) throws InterruptedException {
-        Thread.sleep (timeInMillis);
+    public static void pause (final long timeInMillis) {
+        try {
+            Thread.sleep (timeInMillis);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private Helper () {
