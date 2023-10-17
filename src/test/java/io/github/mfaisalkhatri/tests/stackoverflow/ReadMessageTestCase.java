@@ -73,7 +73,7 @@ public class ReadMessageTestCase extends BaseSuiteSetup {
     }
 
     private void switchWindow() {
-        wait.until(ExpectedConditions.elementToBeClickable())
+
         String handle = getDriver().getWindowHandle();
         getDriver().switchTo().window(handle);
     }
