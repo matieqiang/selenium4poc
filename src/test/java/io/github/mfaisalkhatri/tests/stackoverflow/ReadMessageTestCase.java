@@ -6,6 +6,7 @@ import io.github.mfaisalkhatri.pages.stackoverflow.StackoverflowUsersLoginPO;
 import io.github.mfaisalkhatri.tests.base.BaseSuiteSetup;
 import io.github.mfaisalkhatri.utilities.Helper;
 import lombok.extern.slf4j.Slf4j;
+import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -38,13 +39,14 @@ public class ReadMessageTestCase extends BaseSuiteSetup {
     @Test
     public void login() {
         homePO.getLinkLoginClick().click();
-        switchWindow();
+        getDriver().switchTo().window(getDriver().getWindowHandle());
         loginPO = new StackoverflowUsersLoginPO(getDriver());
         loginPO.getInputEmail().sendKeys(EMAIL);
         loginPO.getInputPassword().sendKeys(PASSWORD);
         loginPO.getButtonSubmit().click();
 
-        switchWindow();
+        getDriver().switchTo().window(getDriver().getWindowHandle());
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("a[id='nav-tags']")));
         Assert.assertEquals(getDriver().getTitle(),"Stack Overflow - Where Developers Learn, Share, & Build Careers");
     }
 /*
@@ -70,11 +72,8 @@ public class ReadMessageTestCase extends BaseSuiteSetup {
     @AfterClass(alwaysRun = true)
     public void tearDown() {
         log.info("ReadMessage tearDown");
+        Helper.pause(5000);
     }
 
-    private void switchWindow() {
 
-        String handle = getDriver().getWindowHandle();
-        getDriver().switchTo().window(handle);
-    }
 }

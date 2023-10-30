@@ -42,7 +42,7 @@ public final class DriverManager {
      * /tmp是文件系统层级标准（Filesystem Hierarchy Standard）中定义的临时文件的位置
      */
     private static final String DISABLE_DEV_SHM = "--disable-dev-shm-usage";
-    private static final String CUSTOM_WINDOW_SIZE = "--window-size=1050,600";
+    private static final String CUSTOM_WINDOW_SIZE = "--window-size=1650,900";
     private static final String HEADLESS = "--headless";
 
     public static void createDriver (final Browsers browser) {
