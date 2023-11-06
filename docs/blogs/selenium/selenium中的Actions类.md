@@ -29,7 +29,8 @@ Selenium 中的键盘操作：
     keyUp()：执行按键释放
     keyDown()：执行按键而不释放
 
-## 
+## Actions.click VS. WebElement.click 的差异
+
 
 
 

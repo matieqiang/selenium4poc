@@ -66,3 +66,5 @@ see: https://stackoverflow.com/questions/11908249/debugging-element-is-not-click
 </svg>
 
 ```
+
+## 4. org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found
