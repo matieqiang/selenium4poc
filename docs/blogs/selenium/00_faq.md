@@ -68,3 +68,5 @@ see: https://stackoverflow.com/questions/11908249/debugging-element-is-not-click
 ```
 
 ## 4. org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found
+## 5. org.openqa.selenium.ElementNotInteractableException: Element <use class="svg-use"> could not be scrolled into view
+## 6. Caused by: org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: unknown error: unrecognized Microsoft Edge version: Chrome/119.0
