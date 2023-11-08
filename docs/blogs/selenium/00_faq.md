@@ -69,4 +69,22 @@ see: https://stackoverflow.com/questions/11908249/debugging-element-is-not-click
 
 ## 4. org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found
 ## 5. org.openqa.selenium.ElementNotInteractableException: Element <use class="svg-use"> could not be scrolled into view
-## 6. Caused by: org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: unknown error: unrecognized Microsoft Edge version: Chrome/119.0
+## 6. Caused by: org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. 
+Message: unknown error: unrecognized Microsoft Edge version: Chrome/119.0
+Caused by: org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: unknown error: unrecognized Microsoft Edge version: Chrome/119.0
+org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created: This version of Microsoft Edge WebDriver only supports Microsoft Edge version 115
+Current browser version is 119.0.2151.46 with binary path /Users/matieqiang/.cache/selenium/MicrosoftEdge/mac64/115.0.1901.203/Microsoft Edge.app/Contents/MacOS/Microsoft Edge 
+
+org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: unknown error: unrecognized Microsoft Edge version: Chrome/119.0.6045.105 
+
+### 原因
+指定了版本
+
+        options.setCapability(CapabilityType.BROWSER_VERSION, "115.0");
+
+
+## 7. org.openqa.selenium.os.ExternalProcess$Builder lambda$start$0
+Nov 04, 2023 8:10:01 AM org.openqa.selenium.os.ExternalProcess$Builder lambda$start$0
+WARNING: failed to copy the output of process 63950
+java.io.IOException: Stream closed
+https://github.com/SeleniumHQ/selenium/issues/13096
