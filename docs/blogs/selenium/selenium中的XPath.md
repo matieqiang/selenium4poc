@@ -88,3 +88,4 @@ namespace
 
 ## 参考
 https://testsigma.com/blog/xpath-in-selenium/
+https://www.w3.org/TR/xpath/#path-abbrev
